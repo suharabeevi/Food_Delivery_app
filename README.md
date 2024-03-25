@@ -1,4 +1,4 @@
-Food Delivery Application
+FOOD DEVLIVERY APPLICATION
 
 
 This is Food-Devilvery-Application - Using MERN Technology

@@ -23,4 +23,25 @@ module.exports = {
         return res.status(500).send({ message: "Internal Server Error" });
       }
     },
+    userlogin: async (req, res) => {
+        try {
+          //console.log(req.body);
+          const { error } = Loginvalidate(req.body);
+          if (error)
+            return res.status(400).send({ message: error.details[0].message });
+          const user = await User.findOne({ email: req.body.email });
+          if (!user)
+            return res.status(401).send({ message: "Invalid Email or Password" });
+          const validpassword = await bcrypt.compare(
+            req.body.password,
+            user.password
+          );
+          if (!validpassword)
+            return res.status(401).send({ message: "Invalid Email or Password" });
+          const token = user.generateAuthToken();
+          res.status(201).send({ token: token, message: "Loggin Successfully" });
+        } catch (error) {
+          return res.status(500).send({ message: "Internal Server Error" });
+        }
+      },
 }

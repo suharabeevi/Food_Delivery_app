@@ -1,4 +1,5 @@
 import { TextField, InputAdornment, Icon, IconButton } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export const SignupFrameComponent = () => {
   return (
@@ -17,20 +18,19 @@ export const SignupFrameComponent = () => {
           </div>
           <div className="w-12 flex flex-col items-start justify-start pt-2 px-0 pb-0 box-border">
             <div className="self-stretch flex flex-row items-start justify-start">
-              <div className="flex-1 relative leading-[24px]">Home</div>
+            <Link to='/'>
+              <div className=" cursor-pointer flex-1 relative leading-[24px]">Home</div>
+              </Link>
             </div>
           </div>
           <div className="w-[127px] flex flex-col items-start justify-start pt-2 px-0 pb-0 box-border">
+            <Link to='/login'>
             <button className="cursor-pointer [border:none] pt-0 px-0 pb-0 bg-[transparent] w-[61px] h-6 flex flex-col items-start justify-start box-border">
               <div className="self-stretch relative text-base leading-[24px] font-title-16px-regular text-button text-center inline-block min-w-[61px] whitespace-nowrap">
-                Sign Up
+               Login
               </div>
-              <img
-                className="self-stretch h-px relative max-w-full overflow-hidden shrink-0"
-                alt=""
-                src="/underline.svg"
-              />
             </button>
+            </Link>
           </div>
           <div className="w-[243px] flex flex-col items-start justify-start pt-px px-0 pb-0 box-border">
             <TextField

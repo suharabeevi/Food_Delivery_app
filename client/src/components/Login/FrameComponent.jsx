@@ -1,5 +1,5 @@
 import { TextField,  } from "@mui/material";
-
+import { Link } from "react-router-dom";
 export const FrameComponent = () => {
   return (
     <header className="self-stretch h-16 flex flex-col items-start justify-start gap-[26px] max-w-full text-left text-5xl text-button font-heading-24px-bold">
@@ -14,9 +14,12 @@ export const FrameComponent = () => {
               </div>
               <div className="w-[253px] flex flex-row items-start justify-between gap-[20px] text-center text-base font-title-16px-regular mq1050:hidden">
                 <div className="flex flex-row items-start justify-start">
-                  <div className="w-12 relative leading-[24px] inline-block min-w-[48px]">
+                <Link to='/'>
+                  <div className="cursor-pointer w-12 relative leading-[24px] inline-block min-w-[48px]">
                     Home
                   </div>
+                  </Link>
+
                 </div>
                 <div className="h-6 w-[66px] relative hidden">
                   <div className="absolute top-[0%] left-[0%] leading-[24px] inline-block w-full h-full">
@@ -28,11 +31,13 @@ export const FrameComponent = () => {
                     About
                   </div>
                 </div>
+                <Link to='/signup'>
                 <button className="cursor-pointer [border:none] p-0 bg-[transparent] flex flex-row items-start justify-start">
                   <div className="w-[61px] relative text-base leading-[24px] font-title-16px-regular text-button text-center inline-block min-w-[61px] whitespace-nowrap">
                     Sign Up
                   </div>
                 </button>
+                </Link>
               </div>
             </div>
           </div>

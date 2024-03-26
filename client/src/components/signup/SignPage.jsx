@@ -6,6 +6,7 @@ import {
     FormControl,
     InputAdornment,
     Button,
+    TextField
   } from "@mui/material";
   
   
@@ -120,26 +121,17 @@ import {
                 </div>
               </div>
               <form className="m-0 self-stretch h-[404px] flex flex-col items-center justify-start gap-[40px] mq450:gap-[20px_40px]">
-                <div className="self-stretch flex flex-col items-start justify-start py-0 pr-px pl-0 gap-[40px] mq450:gap-[20px_40px]">
-                  <div className="self-stretch h-8 flex flex-col items-start justify-start pt-0 px-0 pb-0 box-border gap-[8px]">
-                    <div className="w-[49px] relative text-base leading-[24px] font-title-16px-regular text-gray-200 text-left inline-block">
-                      Name
-                    </div>
-                    <hr className="border-gray-300 w-full mt-1 mb-2" />{/* Underline */}
-                  </div>
-                  <div className="self-stretch h-8 flex flex-col items-start justify-start pt-0 px-0 pb-0 box-border gap-[8px]">
-                    <div className="w-[187px] relative text-base leading-[24px] font-title-16px-regular text-gray-200 text-left inline-block">
-                      Email or Phone Number
-                    </div>
-                    
-                  </div>
-                  <div className="self-stretch h-8 flex flex-col items-start justify-start pt-0 px-0 pb-0 box-border gap-[8px]">
-                    <div className="w-[77px] relative text-base leading-[24px] font-title-16px-regular text-gray-200 text-left inline-block">
-                      Password
-                    </div>
-                   
-                  </div>
-                </div>
+  <div className="self-stretch flex flex-col items-start justify-start py-0 pr-px pl-0 gap-[40px] mq450:gap-[20px_40px]">
+    <div className="self-stretch h-8 flex flex-col items-start justify-start pt-0 px-0 pb-0 box-border gap-[8px]">
+      <TextField id="name" label="Name" variant="standard" />
+    </div>
+    <div className="self-stretch h-8 flex flex-col items-start justify-start pt-0 px-0 pb-0 box-border gap-[8px]">
+      <TextField id="email" label="Email or Phone Number" variant="standard" />
+    </div>
+    <div className="self-stretch h-8 flex flex-col items-start justify-start pt-0 px-0 pb-0 box-border gap-[8px]">
+      <TextField id="password" label="Password" variant="standard" />
+    </div>
+  </div>
                 <div className="self-stretch flex-1 flex flex-col items-start justify-start gap-[16px]">
                   <Button
                     className="self-stretch h-14 mq450:pl-5 mq450:pr-5 mq450:box-border"

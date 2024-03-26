@@ -7,7 +7,7 @@ function RootApp() {
   // const user =localStorage.getItem("token")
   return (
     <Routes>
-      <Route path="/home" exact element={<Drowndown/>}/>
+      <Route path="/" exact element={<Drowndown/>}/>
       <Route path="/signup" exact element={<SignUp/>}/>
       <Route path="/login" exact element={<LogIn/>}/>
      

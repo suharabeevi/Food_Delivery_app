@@ -4,7 +4,7 @@ import {
     MenuItem,
     FormHelperText,
     FormControl,
-    
+    TextField,
     Button,
   } from "@mui/material";
   import {FrameComponent} from "./FrameComponent"
@@ -114,27 +114,14 @@ import {
                   </div>
                 </div>
                 <div className="w-[370px] flex flex-col items-start justify-start gap-[40px] max-w-full mq450:gap-[20px_40px]">
+                <div className="self-stretch h-8 flex flex-col items-start justify-start pt-0 px-0 pb-0 box-border gap-[8px]">
+                <TextField id="email" label="Email or Phone Number" variant="standard" />
+      <hr className="border-gray-300 w-full mt-1 mb-2" />
+    </div>
                   <div className="self-stretch h-8 flex flex-col items-start justify-start pt-0 px-0 pb-0 box-border gap-[8px]">
-                    <div className="relative text-base leading-[24px] font-title-16px-regular text-gray-200 text-left">
-                      Email or Phone Number
-                    </div>
-                    <img
-                      className="self-stretch h-px relative max-w-full overflow-hidden shrink-0"
-                      alt=""
-                      src="/underline.svg"
-                    />
-                  </div>
-                  <div className="self-stretch h-8 flex flex-col items-start justify-start pt-0 px-0 pb-0 box-border gap-[8px]">
-                    <div className="relative text-base leading-[24px] font-title-16px-regular text-gray-200 text-left inline-block min-w-[77px]">
-                      Password
-                    </div>
-                    <hr/>
-                    {/* <img
-                      className="self-stretch h-px relative max-w-full overflow-hidden shrink-0"
-                      alt=""
-                      src="/underline-1.svg"
-                    /> */}
-                  </div>
+      <TextField id="password" label="Password" variant="standard" />
+      <hr className="border-gray-300 w-full mt-1 mb-2" />
+    </div>
                 </div>
               </div>
               <div className="w-[371px] flex flex-row items-center justify-between max-w-full gap-[20px] mq450:flex-wrap">

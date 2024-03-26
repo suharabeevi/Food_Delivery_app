@@ -28,7 +28,7 @@ const DimensionalReducer = () => {
               className="absolute w-[calc(100%_-_18px)] top-[calc(50%_-_76px)] right-[9px] left-[9px] max-w-full overflow-hidden h-[152px] object-cover"
               loading="lazy"
               alt=""
-              src="/g922500x500-1@2x.png"
+              src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711389870/g92-2-500x500_1_jddkpi.png"
             />
           </div>
         </div>
@@ -110,7 +110,7 @@ const DimensionalReducer = () => {
               <img
                 className="absolute top-[calc(50%_-_50px)] left-[calc(50%_-_96px)] w-[191px] h-[101px] object-cover hidden"
                 alt=""
-                src="/ak90001500x500-1@2x.png"
+                src=""
               />
             </div>
           </div>
@@ -130,7 +130,7 @@ const DimensionalReducer = () => {
           className="absolute top-[46px] left-[40px] w-[172px] h-[152px] object-cover z-[1]"
           loading="lazy"
           alt=""
-          src="/g922500x500-1-1@2x.png"
+          src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711389870/g92-2-500x500_1_jddkpi.png"
         />
       </div>
       <div className="h-[350px] w-[270px] relative shrink-0 [debug_commit:f6aba90]">
@@ -157,7 +157,7 @@ const DimensionalReducer = () => {
               <img
                 className="absolute w-[calc(100%_-_20px)] top-[26px] right-[10px] left-[10px] max-w-full overflow-hidden h-[129px] object-cover hidden"
                 alt=""
-                src="/g27cq4500x500-1@2x.png"
+                src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711389870/g92-2-500x500_1_jddkpi.png"
               />
             </div>
           </div>
@@ -211,7 +211,7 @@ const DimensionalReducer = () => {
           className="absolute top-[43px] left-[38px] w-[172px] h-[152px] object-cover z-[1]"
           loading="lazy"
           alt=""
-          src="/g922500x500-2@2x.png"
+          src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711389870/g92-2-500x500_1_jddkpi.png"
         />
       </div>
       <NeuralNetwork
@@ -268,7 +268,7 @@ const DimensionalReducer = () => {
               className="absolute h-full top-[0px] bottom-[0px] left-[41px] max-h-full w-[107px] object-cover"
               loading="lazy"
               alt=""
-              src="/sammoghadamkhamsehkvmdstrgobmunsplash-1-1@2x.png"
+              src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711389870/g92-2-500x500_1_jddkpi.png"
             />
           </div>
         </div>

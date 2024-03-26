@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
     Select,
     InputLabel,
@@ -22,8 +24,14 @@ import {
   import FrameComponent1 from "../HomePage/FrameComponent1";
   import TreeList from "../HomePage/TreeList";
  import { Footer } from "../Footer/Footer";
-  
+ // Initially visible
+
   export const Drowndown = () => {
+    const [isVisible, setIsVisible] = useState(true);
+
+    const toggleVisibility = () => {
+      setIsVisible(!isVisible);
+    };
     return (
       <div className="w-full relative bg-bg overflow-hidden flex flex-col items-end justify-start gap-[8px] tracking-[normal]">
         <header className="self-stretch bg-button overflow-hidden flex flex-row items-start justify-end pt-3 px-[136px] pb-1 box-border top-[0] z-[99] sticky max-w-full text-left text-sm text-text font-title-16px-regular mq750:pl-[34px] mq750:pr-[34px] mq750:box-border mq1050:pl-[68px] mq1050:pr-[68px] mq1050:box-border">
@@ -93,7 +101,7 @@ import {
                   <img
                     width="24px"
                     height="24px"
-                    src="/dropdown.svg"
+                    src=""
                     style={{}}
                   />
                 )}
@@ -111,7 +119,7 @@ import {
               className="mt-[-6.5px] h-[98px] flex-1 relative max-w-full overflow-hidden object-cover"
               loading="lazy"
               alt=""
-              src="/rectangle-19@2x.png"
+              src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711122599/64480603-8980-4278-bb9a-5b2ffdb5925e_1711116791789477156_hlyhro.png"
             />
           </div>
           <div className="absolute top-[0px] left-[248px] box-border w-[0.5px] h-[105.5px] opacity-[0.3] border-r-[0.5px] border-solid border-button" />
@@ -121,7 +129,7 @@ import {
             variant="outlined"
             InputProps={{
               endAdornment: (
-                <img width="30px" height="30px" src="/component-2.svg" />
+                <img width="30px" height="30px" src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711338917/Vector_1_azas2j.png" />
               ),
             }}
             sx={{
@@ -145,12 +153,14 @@ import {
             alt=""
             src="/vector.svg"
           />
-          <button className="cursor-pointer [border:none] py-3 px-2.5 bg-secondary-2 absolute top-[31px] left-[995px] rounded-[10px] w-[135px] flex flex-row items-start justify-start box-border hover:bg-salmon">
+          <button className="cursor-pointer [border:none] py-3 px-2.5 bg-secondary-2 absolute top-[31px] left-[995px] rounded-[10px] w-[135px] flex flex-row items-start justify-start box-border hover:bg-salmon" onClick={toggleVisibility}>
             <div className="w-[108px] relative text-xl leading-[28px] font-medium font-title-16px-regular text-button text-center inline-block shrink-0 mq450:text-base mq450:leading-[22px]">
               Login
             </div>
           </button>
+          {isVisible && (
           <AccountDropdown />
+          )}
         </section>
         <section className="flex flex-col items-start justify-start pt-0 pb-[132px] pr-0 pl-5 box-border gap-[22px] max-w-full lg:pb-[86px] lg:box-border mq450:pb-9 mq450:box-border mq1050:pb-14 mq1050:box-border">
           <InputFilter />

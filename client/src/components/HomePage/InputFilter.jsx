@@ -9,7 +9,7 @@ import UserInterface from "./UserInterface";
           <div className="flex-1 flex flex-col items-start justify-end pt-0 px-0 pb-[9px] box-border min-w-[196px] text-xs text-button">
             <div className="self-stretch flex flex-row items-end justify-start gap-[17px]">
               <div className="flex-1 flex flex-col items-start justify-start gap-[4px]">
-                <div className="relative leading-[18px] font-medium inline-block min-w-[31px]">
+                <div className="relative leading-[18px] font-medium inline-block min-w-[81px]">
                   Days
                 </div>
                 <b className="relative text-13xl tracking-[0.04em] leading-[30px] inline-block font-heading-30px-bold min-w-[46px] mq450:text-lgi mq450:leading-[18px] mq1050:text-7xl mq1050:leading-[24px]">

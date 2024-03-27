@@ -70,10 +70,10 @@
             </div>
           </div>
           <img
-            className="w-[46px] h-[46px] relative object-contain"
+            className="cursor-pointer w-[46px] h-[46px] relative object-contain"
             loading="lazy"
             alt=""
-            src="/fill-with-up-arrow.svg"
+            src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711541147/Fill_with_Up_Arrow_vs29xo.png"
           />
         </div>
       </section>

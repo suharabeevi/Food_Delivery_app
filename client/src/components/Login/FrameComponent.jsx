@@ -47,7 +47,7 @@ export const FrameComponent = () => {
             variant="outlined"
             InputProps={{
               endAdornment: (
-                <img width="24px" height="24px" src="/component-2.svg" />
+                <img width="24px" height="24px" src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711338917/Vector_1_azas2j.png" />
               ),
             }}
             sx={{

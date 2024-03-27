@@ -1,3 +1,9 @@
+import axios from 'axios'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../../constant/endpoint';
+import End_Points from '../../constant/endpoint';
+import {userRegistrationValidationSchema} from '../../validation/userValidation'
 import {
     Select,
     InputLabel,
@@ -14,6 +20,37 @@ import {
   import { Footer } from "../Footer/Footer";
   
    const SignUp = () => {
+
+    const [data,setData] =useState({
+      username:"",
+      email:"",
+      password:""
+  });
+  console.log(data);
+  const [error,setError] = useState("")
+  const navigate = useNavigate()
+  const handleChange =({currentTarget:input})=>{
+    setData({...data,[input.name]:input.value})
+    
+        }
+
+  const handleSubmit =async(e)=>{
+    console.log(e);
+    e.preventDefault()
+    try{
+      await userRegistrationValidationSchema.validate(data, { abortEarly: false });
+
+      const url= BASE_URL+End_Points.LOGIN_USER
+      const {data:res} =await axios.post(url,data)
+      
+      navigate("/login")
+      console.log(res.message);
+    }catch(error){
+if(error.response && error.response.status>=400 && error.response.status<=500){
+setError(error.response.data.message)
+}
+    }
+}
     return (
       <div className="w-full relative bg-primary overflow-hidden flex flex-col items-start justify-start gap-[140px] tracking-[normal] text-center text-base text-button font-title-16px-regular mq450:gap-[35px_140px] mq750:gap-[70px_140px]">
         <div className="w-12 h-6 relative hidden">
@@ -120,20 +157,24 @@ import {
                   Enter your details below
                 </div>
               </div>
-              <form className="m-0 self-stretch h-[404px] flex flex-col items-center justify-start gap-[40px] mq450:gap-[20px_40px]">
+              <form  onSubmit={handleSubmit}  className="m-0 self-stretch h-[404px] flex flex-col items-center justify-start gap-[40px] mq450:gap-[20px_40px]">
   <div className="self-stretch flex flex-col items-start justify-start py-0 pr-px pl-0 gap-[40px] mq450:gap-[20px_40px]">
     <div className="self-stretch h-8 flex flex-col items-start justify-start pt-0 px-0 pb-0 box-border gap-[8px]">
-      <TextField id="name" label="Name" variant="standard" />
+      <TextField id="name" name="username" label="Name" variant="standard"   onChange={handleChange}
+ />
     </div>
     <div className="self-stretch h-8 flex flex-col items-start justify-start pt-0 px-0 pb-0 box-border gap-[8px]">
-      <TextField id="email" label="Email or Phone Number" variant="standard" />
+      <TextField id="email" label="Email or Phone Number" name='email' variant="standard"    onChange={handleChange} // Add this line
+/>
     </div>
     <div className="self-stretch h-8 flex flex-col items-start justify-start pt-0 px-0 pb-0 box-border gap-[8px]">
-      <TextField id="password" label="Password" variant="standard" />
+      <TextField id="password" label="Password" name='password' variant="standard"   onChange={handleChange} // Add this line
+ />
     </div>
   </div>
                 <div className="self-stretch flex-1 flex flex-col items-start justify-start gap-[16px]">
                   <Button
+                    type="submit"
                     className="self-stretch h-14 mq450:pl-5 mq450:pr-5 mq450:box-border"
                     disableElevation={true}
                     variant="contained"
@@ -146,6 +187,7 @@ import {
                       "&:hover": { background: "#db4444" },
                       height: 56,
                     }}
+                    onClick={handleSubmit}
                   >
                     Create Account
                   </Button>

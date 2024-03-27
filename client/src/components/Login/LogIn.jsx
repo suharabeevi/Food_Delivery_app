@@ -84,7 +84,7 @@ import {
                     <img
                       width="24px"
                       height="24px"
-                      src="/dropdown.svg"
+                      src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711338457/DropDown_r2mxhk.png"
                       style={{}}
                     />
                   )}

@@ -6,10 +6,10 @@ const AccountDropdown = () => {
             <img
               className="h-8 w-8 relative overflow-hidden shrink-0"
               alt=""
-              src="/user.svg"
+              src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711523082/user_wmhddx.png"
             />
             <div className="flex-1 flex flex-col items-start justify-start pt-[5.5px] px-0 pb-0">
-              <div className="self-stretch relative leading-[21px]">
+              <div className="cursor-pointer self-stretch relative leading-[21px]">
                 Manage My Account
               </div>
             </div>
@@ -21,34 +21,34 @@ const AccountDropdown = () => {
               <img
                 className="h-6 w-6 relative overflow-hidden shrink-0 min-h-[24px]"
                 alt=""
-                src="/iconmallbag.svg"
+                src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711523082/icon-mallbag_ok7lqv.png"
               />
               <div className="flex-1 flex flex-col items-start justify-start pt-[1.5px] px-0 pb-0">
-                <div className="self-stretch relative leading-[21px] inline-block min-w-[64px]">
+                <div className="cursor-pointer self-stretch relative leading-[21px] inline-block min-w-[64px]">
                   My Order
                 </div>
               </div>
             </div>
             <div className="self-stretch h-6 flex flex-row items-start justify-start gap-[16px]">
               <img
-                className="h-6 w-6 relative object-cover min-h-[24px]"
+                className="h-6 w-7 relative object-cover min-h-[24px]"
                 alt=""
-                src="/mask-group@2x.png"
+                src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711523082/Mask_group_xv5jtm.png"
               />
               <div className="flex-1 flex flex-col items-start justify-start pt-[1.5px] px-0 pb-0">
-                <div className="self-stretch relative leading-[21px] inline-block min-w-[80px]">
+                <div className="cursor-pointer self-stretch relative leading-[21px] inline-block min-w-[80px]">
                   Notification
                 </div>
               </div>
             </div>
             <div className="self-stretch h-6 flex flex-row items-start justify-start gap-[16px] text-left">
               <img
-                className="h-6 w-6 relative object-cover min-h-[24px]"
+                className="h-6 w-7 relative object-cover min-h-[24px]"
                 alt=""
-                src="/iconreviews@2x.png"
+                src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711523082/Icon-Reviews_ur6kiz.png"
               />
               <div className="flex-1 flex flex-col items-start justify-start pt-[1.5px] px-0 pb-0">
-                <div className="self-stretch relative leading-[21px]">
+                <div className="cursor-pointer self-stretch relative leading-[21px]">
                   Whishlist
                 </div>
               </div>
@@ -58,10 +58,10 @@ const AccountDropdown = () => {
                 className="h-[35px] w-[34.2px] relative object-cover"
                 loading="lazy"
                 alt=""
-                src="/group-1000005947@2x.png"
+                src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711523486/Frame_1000005949_tmpkvf.png"
               />
               <div className="flex flex-col items-start justify-start pt-[7px] px-0 pb-0">
-                <div className="relative leading-[21px] inline-block min-w-[75.2px]">
+                <div className="cursor-pointer relative leading-[21px] inline-block min-w-[75.2px]">
                   Offer Zone
                 </div>
               </div>
@@ -73,10 +73,10 @@ const AccountDropdown = () => {
           <img
             className="h-6 w-6 relative overflow-hidden shrink-0 object-contain min-h-[24px] z-[1]"
             alt=""
-            src="/iconlogout.svg"
+            src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711523740/Icon-logout_rtprfu.png"
           />
           <div className="flex-1 flex flex-col items-start justify-start pt-[1.5px] px-0 pb-0">
-            <div className="self-stretch relative leading-[21px] inline-block min-w-[48px]">
+            <div className="cursor-pointer self-stretch relative leading-[21px] inline-block min-w-[48px]">
               Logout
             </div>
           </div>

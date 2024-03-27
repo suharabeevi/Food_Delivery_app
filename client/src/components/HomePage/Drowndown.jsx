@@ -6,10 +6,7 @@ import {
     MenuItem,
     FormHelperText,
     FormControl,
-    InputAdornment,
     TextField,
-    Icon,
-    IconButton,
     Button,
   } from "@mui/material";
   import FrameComponent5 from "../HomePage/FrameComponent5"
@@ -27,7 +24,7 @@ import {
  // Initially visible
 
   export const Drowndown = () => {
-    const [isVisible, setIsVisible] = useState(true);
+    const [isVisible, setIsVisible] = useState(false);
 
     const toggleVisibility = () => {
       setIsVisible(!isVisible);
@@ -101,7 +98,7 @@ import {
                   <img
                     width="24px"
                     height="24px"
-                    src=""
+                    src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711338457/DropDown_r2mxhk.png"
                     style={{}}
                   />
                 )}
@@ -144,14 +141,14 @@ import {
             }}
           />
           <img
-            className="absolute top-[49px] left-[1169px] w-[37.3px] h-[24.1px]"
+            className="cursor-pointer absolute top-[49px] left-[1169px] w-[37.3px] h-[24.1px]"
             alt=""
-            src="/group-1000005943.svg"
+            src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711530955/Group_1000005943_igryg6.png"
           />
           <img
-            className="absolute top-[45px] left-[1266px] w-[30px] h-7"
+            className="cursor-pointer absolute top-[45px] left-[1266px] w-[30px] h-7"
             alt=""
-            src="/vector.svg"
+            src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711530955/Vector_3_hrugpe.png"
           />
           <button className="cursor-pointer [border:none] py-3 px-2.5 bg-secondary-2 absolute top-[31px] left-[995px] rounded-[10px] w-[135px] flex flex-row items-start justify-start box-border hover:bg-salmon" onClick={toggleVisibility}>
             <div className="w-[108px] relative text-xl leading-[28px] font-medium font-title-16px-regular text-button text-center inline-block shrink-0 mq450:text-base mq450:leading-[22px]">

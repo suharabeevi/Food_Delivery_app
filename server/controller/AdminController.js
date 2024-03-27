@@ -18,5 +18,15 @@ module.exports = {
         } catch (error) {
             return res.status(500).send({ message: "Internal Server Error" });
         }
+    },
+    GetAllcategoty: async(req,res)=>{
+        try{
+            const AllCategory =await Category.find()
+            res.status(201).send({ Data:AllCategory,message: "Get All category" });
+
+        }catch(error){
+     return res.status(500).send({ message: "Internal Server Error" });
+
+        }
     }
 };

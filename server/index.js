@@ -5,6 +5,7 @@ const morgan = require('morgan')
 const cors= require('cors')
 const connection= require('./connection')
 const usersRouter = require('./routes/user');
+const AdminRouter = require('./routes/Admin')
 
 //DB Connection
 connection()
@@ -15,6 +16,8 @@ app.use(morgan("dev"))
 
 //routes
 app.use('/api/user',usersRouter)
+app.use('/api/admin',AdminRouter)
+
 
 const Port =process.env.PORT || 7000
 app.listen(Port,()=>{

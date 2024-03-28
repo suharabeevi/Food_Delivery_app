@@ -1,3 +1,7 @@
+import { useState } from "react";
+import axios from "axios";
+import { BASE_URL } from "../../constant/endpoint";
+import End_Points from "../../constant/endpoint";
 import {
     Select,
     InputLabel,
@@ -11,6 +15,34 @@ import {
   import {Footer} from "../Footer/Footer";
   
   export const LogIn = () => {
+    const [data, setData] = useState({
+      email: "",
+      password: ""
+  });
+  const [error, setError] = useState("");
+
+  const handleChange = ({ currentTarget: input }) => {
+      setData({ ...data, [input.name]: input.value });
+  }
+
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      console.log(data);
+      try {
+          const url =BASE_URL+End_Points.LOGIN_USER ;
+          
+          const response = await axios.post(url, data);
+          localStorage.setItem("token", response.data.token);
+          window.location = "/"; // Redirecting to the home page
+      } catch (error) {
+          if (error.response && error.response.status >= 400 && error.response.status <= 500) {
+              setError(error.response.data.message);
+          }
+      }
+  }
+
+
+
     return (
       <div className="w-full relative bg-bg overflow-hidden flex flex-col items-start justify-start gap-[140px] tracking-[normal] mq750:gap-[70px_140px] mq450:gap-[35px_140px]">
         <section className="self-stretch flex flex-col items-start justify-start gap-[48px] max-w-full text-left text-sm text-text font-title-16px-regular mq750:gap-[24px_48px]">
@@ -103,7 +135,7 @@ import {
               alt=""
               src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711337388/Side_Image_in21s6.png"
             />
-            <form className="m-0 flex flex-col items-start justify-start py-5 px-0 box-border gap-[40px] min-w-[430px] max-w-full lg:flex-1 mq750:min-w-full mq450:gap-[20px_40px]">
+            <form className="m-0 flex flex-col items-start justify-start py-5 px-0 box-border gap-[40px] min-w-[430px] max-w-full lg:flex-1 mq750:min-w-full mq450:gap-[20px_40px]" onSubmit={handleSubmit}>
               <div className="flex flex-col items-start justify-start gap-[48px] max-w-full mq450:gap-[24px_48px]">
                 <div className="flex flex-col items-start justify-start gap-[24px]">
                   <h1 className="m-0 relative text-17xl tracking-[0.04em] leading-[30px] font-medium font-heading-24px-bold text-button text-left mq450:text-[22px] mq450:leading-[18px] mq1050:text-[29px] mq1050:leading-[24px]">
@@ -115,11 +147,11 @@ import {
                 </div>
                 <div className="w-[370px] flex flex-col items-start justify-start gap-[40px] max-w-full mq450:gap-[20px_40px]">
                 <div className="self-stretch h-8 flex flex-col items-start justify-start pt-0 px-0 pb-0 box-border gap-[8px]">
-                <TextField id="email" label="Email or Phone Number" variant="standard" />
+                <TextField  id="email" label="Email or Phone Number" name="email" variant="standard" onChange={handleChange}/>
       <hr className="border-gray-300 w-full mt-1 mb-2" />
     </div>
                   <div className="self-stretch h-8 flex flex-col items-start justify-start pt-0 px-0 pb-0 box-border gap-[8px]">
-      <TextField id="password" label="Password" variant="standard" />
+      <TextField  id="password" label="Password"  name='password' variant="standard" onChange={handleChange} />
       <hr className="border-gray-300 w-full mt-1 mb-2" />
     </div>
                 </div>
@@ -139,6 +171,7 @@ import {
                     width: 143,
                     height: 56,
                   }}
+               
                 >
                   Log In
                 </Button>

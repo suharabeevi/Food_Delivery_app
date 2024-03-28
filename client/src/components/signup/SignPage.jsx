@@ -26,7 +26,6 @@ import {
       email:"",
       password:""
   });
-  console.log(data);
   const [error,setError] = useState("")
   const navigate = useNavigate()
   const handleChange =({currentTarget:input})=>{
@@ -35,16 +34,17 @@ import {
         }
 
   const handleSubmit =async(e)=>{
-    console.log(e);
+    console.log(data,"dataaaa");
     e.preventDefault()
     try{
       await userRegistrationValidationSchema.validate(data, { abortEarly: false });
-
-      const url= BASE_URL+End_Points.LOGIN_USER
-      const {data:res} =await axios.post(url,data)
+      
+      const url= BASE_URL+End_Points.REGISTER_USER
+      console.log(url);
+      const response =await axios.post(url,data)
       
       navigate("/login")
-      console.log(res.message);
+      console.log(response.data.message);
     }catch(error){
 if(error.response && error.response.status>=400 && error.response.status<=500){
 setError(error.response.data.message)
@@ -157,7 +157,7 @@ setError(error.response.data.message)
                   Enter your details below
                 </div>
               </div>
-              <form  onSubmit={handleSubmit}  className="m-0 self-stretch h-[404px] flex flex-col items-center justify-start gap-[40px] mq450:gap-[20px_40px]">
+              <form   className="m-0 self-stretch h-[404px] flex flex-col items-center justify-start gap-[40px] mq450:gap-[20px_40px]">
   <div className="self-stretch flex flex-col items-start justify-start py-0 pr-px pl-0 gap-[40px] mq450:gap-[20px_40px]">
     <div className="self-stretch h-8 flex flex-col items-start justify-start pt-0 px-0 pb-0 box-border gap-[8px]">
       <TextField id="name" name="username" label="Name" variant="standard"   onChange={handleChange}

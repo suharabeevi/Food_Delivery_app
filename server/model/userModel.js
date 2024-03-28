@@ -28,7 +28,7 @@ const validate = (data) => {
 };
 const Loginvalidate = (data) => {
   const schema = Joi.object({
-    email: Joi.string().email().required().label("Email"),
+    email: Joi.string().email().required().label("email"),
     password: Joi.string().required().label("password"),
     
   });

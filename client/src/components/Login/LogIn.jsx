@@ -23,6 +23,7 @@ import {
 
   const handleChange = ({ currentTarget: input }) => {
       setData({ ...data, [input.name]: input.value });
+      
   }
 
   const handleSubmit = async (e) => {
@@ -30,13 +31,13 @@ import {
       console.log(data);
       try {
           const url =BASE_URL+End_Points.LOGIN_USER ;
-          
+          console.log(url);
           const response = await axios.post(url, data);
           localStorage.setItem("token", response.data.token);
           window.location = "/"; // Redirecting to the home page
       } catch (error) {
           if (error.response && error.response.status >= 400 && error.response.status <= 500) {
-              setError(error.response.data.message);
+              setError(error.response.data.message||"An error occurred during login");
           }
       }
   }
@@ -135,7 +136,7 @@ import {
               alt=""
               src="https://res.cloudinary.com/dpgbodkae/image/upload/v1711337388/Side_Image_in21s6.png"
             />
-            <form className="m-0 flex flex-col items-start justify-start py-5 px-0 box-border gap-[40px] min-w-[430px] max-w-full lg:flex-1 mq750:min-w-full mq450:gap-[20px_40px]" onSubmit={handleSubmit}>
+            <form className="m-0 flex flex-col items-start justify-start py-5 px-0 box-border gap-[40px] min-w-[430px] max-w-full lg:flex-1 mq750:min-w-full mq450:gap-[20px_40px]">
               <div className="flex flex-col items-start justify-start gap-[48px] max-w-full mq450:gap-[24px_48px]">
                 <div className="flex flex-col items-start justify-start gap-[24px]">
                   <h1 className="m-0 relative text-17xl tracking-[0.04em] leading-[30px] font-medium font-heading-24px-bold text-button text-left mq450:text-[22px] mq450:leading-[18px] mq1050:text-[29px] mq1050:leading-[24px]">
@@ -171,7 +172,7 @@ import {
                     width: 143,
                     height: 56,
                   }}
-               
+                  onClick={handleSubmit}
                 >
                   Log In
                 </Button>

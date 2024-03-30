@@ -8,11 +8,14 @@ module.exports = {
         const { error } = validate(req.body);
         if (error)
           return res.status(400).send({ message: error.details[0].message });
+
+          //if user is already exit
         const user = await User.findOne({ email: req.body.email });
         if (user)
           return res
             .status(409)
             .send({ message: "User with given mailid Already exist" });
+            //save newUser Details
         const salt = await bcrypt.genSalt(Number(process.env.SALT));
         const hashpassword = await bcrypt.hash(req.body.password, salt);
   
@@ -38,6 +41,7 @@ module.exports = {
           );
           if (!validpassword)
             return res.status(401).send({ message: "Invalid Email or Password" });
+          //generate token
           const token = user.generateAuthToken();
           res.status(201).send({ token: token, message: "Loggin Successfully" });
         } catch (error) {
